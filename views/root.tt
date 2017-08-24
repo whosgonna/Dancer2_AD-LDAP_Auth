@@ -1,0 +1,13 @@
+<div id='body_main'>
+<h2><% header %></h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non magna ut 
+lectus fringilla tempus. Integer sapien eros, viverra imperdiet sem a, ornare 
+interdum metus. Duis convallis blandit nibh, quis mattis nibh consectetur sit 
+amet. Morbi vel lectus sit amet ante auctor semper id sit amet nulla. Fusce 
+molestie purus orci, eu vehicula nunc auctor vitae. Fusce hendrerit est purus, 
+sit amet rhoncus est accumsan tempor. Sed id tellus varius justo imperdiet 
+ornare ut quis erat. Nulla eget commodo ipsum. Nunc vitae vestibulum quam, 
+vitae viverra turpis. Maecenas id neque mi. Mauris in ligula a quam semper 
+hendrerit. Nulla sed egestas orci. Nunc id magna commodo, semper enim a, 
+aliquam libero. Pellentesque aliquam laoreet porta. Sed fringilla gravida 
+massa sed faucibus. Nullam ullamcorper at nulla eu pharetra.</p>

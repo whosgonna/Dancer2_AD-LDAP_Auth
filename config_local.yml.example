@@ -1,0 +1,13 @@
+plugins:
+    Auth::Extensible:
+        realms:
+            ldap:
+                provider: LDAP
+                host: ldaps://domain-controller.domain.com
+                basedn: "dc=domain,dc=com"
+                binddn: ldap-bind-user@domain.com
+                bindpw: REDACTED
+                username_attribute: userPrincipalName
+                role_attribute: name
+                role_filter: '(objectClass=group)'
+
