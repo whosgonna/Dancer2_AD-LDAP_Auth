@@ -1,5 +1,11 @@
 <div id='body_main'>
 <h2><% header %></h2>
+<p>
+<% IF session.logged_in_user %>
+  You are logged in.
+<% ELSE %>
+  You are not logged in.
+<% END %></p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non magna ut 
 lectus fringilla tempus. Integer sapien eros, viverra imperdiet sem a, ornare 
 interdum metus. Duis convallis blandit nibh, quis mattis nibh consectetur sit 
