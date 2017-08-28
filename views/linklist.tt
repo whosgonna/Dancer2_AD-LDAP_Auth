@@ -1,8 +1,10 @@
-<li><% IF session.logged_in_user %>
-<a href="logout">Logout</a></li>
-<% ELSE %>
-<a href="login">Login</a>
-<% END %></li>
+<li>
+  <% IF session.logged_in_user %>
+    <a href="logout">Logout</a></li>
+  <% ELSE %>
+    <a href="login">Login</a>
+  <% END %>
+</li>
 <li><a href="http://perldancer.org/">PerlDancer</a></li>
 <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
 <li><a href="https://github.com/PerlDancer/Dancer2/">GitHub Community</a></li>
