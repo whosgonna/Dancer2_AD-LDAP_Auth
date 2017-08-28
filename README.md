@@ -86,3 +86,50 @@ The `role_attribute` and `role_filter` properties combine to allow Active Direct
 to be mapped to Dancer2 user roles.  The values here state to use the name of the group as the 
 role name.
 
+## Usage
+### The routes:
+The logic for the app is stored in `lib/ldap.pm`, and provides the three simple routes.
+
+The root route, has no call for authentication.
+```perl
+get '/' => sub {
+```
+
+The protected route simply requires that the user be logged in:
+```
+any ['get', 'post'] =>'protected' => require_login sub {
+```
+
+The admin route requires that the user be a member of the `Domain Admins` Active 
+Directory group.
+```perl
+any ['get', 'post'] => '/admins' => require_role 'Domain Admins' => sub {
+```
+
+### The pages
+Each route uses the `index.tt` template.  I've modified the default dancer index template 
+only slightly:
+1. I've moved the list of links in the "Join the Community" section from within `index.tt` to being
+included from the file `linklist.tt`.  This will provide for easier editing of this small list 
+if needed.
+1. Each route sends a `tt_body` parameter to the `index.tt` template. If found, then the body will load 
+from a file matching that name.  If the value is not set, then the default dancer index page text 
+will b displayed.
+
+### Dynamic values
+The `session.logged_in_user` parameter can be used in the template to check if the user is logged in 
+or not.  This allows the first value in the right hand list to display "Login" if the user is logged out, 
+and "Logout" if the user is logged in.  The list (again, imported from `linklist.tt`) is simply:
+```html
+<li>
+  <% IF session.logged_in_user %>
+    <a href="logout">Logout</a></li>
+  <% ELSE %>
+    <a href="login">Login</a>
+  <% END %>
+</li>
+<li><a href="http://perldancer.org/">PerlDancer</a></li>
+<li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
+<li><a href="https://github.com/PerlDancer/Dancer2/">GitHub Community</a></li>
+
+```
