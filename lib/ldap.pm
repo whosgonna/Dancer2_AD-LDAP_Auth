@@ -1,10 +1,7 @@
 package ldap;
 use Dancer2;
-use Dancer2::Session::Simple;
-use lib '/usr/home/ben/Dancer2-Plugin-Auth-Extensible/lib/';
 use Dancer2::Plugin::Auth::Extensible;
 use Dancer2::Plugin::Auth::Extensible::Provider::LDAP;
-use Data::Printer;
 
 our $VERSION = '0.1';
 
