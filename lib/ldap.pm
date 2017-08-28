@@ -19,7 +19,7 @@ any ['get', 'post'] =>'protected' => require_login sub {
 
 };
 
-any ['get', 'post'] => '/admins' => require_role AltiGenAdministrators => sub {
+any ['get', 'post'] => '/admins' => require_role 'Domain Admins' => sub {
     my $output = {
         title   => 'Admins Only',
         header  => 'This Page Is Only for Administrators',
